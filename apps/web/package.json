@@ -1,0 +1,24 @@
+{
+  "name": "@telme/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "next build && node scripts/prepare-standalone.mjs",
+    "dev": "next dev -p 3010",
+    "start": "node scripts/start.mjs",
+    "test": "vitest run",
+    "typecheck": "pnpm --filter @telme/auth build && pnpm --filter @telme/device-model build && pnpm --filter @telme/contracts build && tsc --noEmit"
+  },
+  "dependencies": {
+    "@telme/contracts": "workspace:*",
+    "@telme/device-model": "workspace:*",
+    "next": "16.3.8",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "name": "telme-acs",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Plataforma interna de gerenciamento de CPEs da TELME FIBRA.",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.16.0",
+  "engines": {
+    "node": "^24.0.0",
+    "pnpm": "^11.16.0"
+  },
+  "scripts": {
+    "build": "pnpm -r --if-present build",
+    "dev": "pnpm --parallel --filter \"./apps/*\" dev",
+    "start": "pnpm --parallel --filter \"./apps/*\" start",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint .",
+    "test": "pnpm -r --if-present test",
+    "test:integration": "pnpm --filter @telme/api test:integration && pnpm --filter @telme/persistence test:integration",
+    "typecheck": "pnpm -r --if-present typecheck",
+    "db:format": "prisma format",
+    "db:generate": "prisma generate",
+    "db:validate": "prisma validate",
+    "db:migrate:dev": "prisma migrate dev",
+    "db:migrate:deploy": "prisma migrate deploy",
+    "db:migration:diff": "prisma migrate diff --from-empty --to-schema prisma/schema.prisma --script",
+    "admin:create": "pnpm --filter @telme/api admin:create"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@types/node": "24.13.3",
+    "dotenv": "17.4.2",
+    "eslint": "10.8.1",
+    "prettier": "3.9.6",
+    "prisma": "7.9.1",
+    "tsx": "4.23.11",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.66.0",
+    "vitest": "4.1.10"
+  }
+}

@@ -1,0 +1,154 @@
+name: telme-acs
+
+x-genieacs-service: &genieacs-service
+  image: telme-acs/genieacs:1.2.16
+  restart: unless-stopped
+  depends_on:
+    mongo:
+      condition: service_healthy
+  environment:
+    GENIEACS_MONGODB_CONNECTION_URL: mongodb://${MONGO_INITDB_ROOT_USERNAME}:${MONGO_INITDB_ROOT_PASSWORD}@mongo:27017/genieacs?authSource=admin
+    GENIEACS_UI_JWT_SECRET: ${GENIEACS_UI_JWT_SECRET:?Defina GENIEACS_UI_JWT_SECRET no arquivo .env}
+    GENIEACS_EXT_DIR: /opt/genieacs/ext
+    GENIEACS_LOG_FORMAT: json
+    GENIEACS_ACCESS_LOG_FORMAT: json
+    NODE_OPTIONS: --enable-source-maps
+  volumes:
+    - ./genieacs/extensions:/opt/genieacs/ext:ro
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-telme_acs}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Defina POSTGRES_PASSWORD no arquivo .env}
+      POSTGRES_DB: ${POSTGRES_DB:-telme_acs}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7.4-alpine
+    restart: unless-stopped
+    command: ["redis-server", "--appendonly", "yes"]
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6379}:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  mongo:
+    image: mongo:8.0
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME:?Defina MONGO_INITDB_ROOT_USERNAME no arquivo .env}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD:?Defina MONGO_INITDB_ROOT_PASSWORD no arquivo .env}
+    volumes:
+      - mongo_data:/data/db
+      - mongo_config:/data/configdb
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - >-
+          mongosh --quiet --host 127.0.0.1
+          --username "$$MONGO_INITDB_ROOT_USERNAME"
+          --password "$$MONGO_INITDB_ROOT_PASSWORD"
+          --authenticationDatabase admin
+          --eval "quit(db.adminCommand('ping').ok ? 0 : 2)"
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 20s
+
+  genieacs-cwmp:
+    <<: *genieacs-service
+    build:
+      context: ./infrastructure/docker/genieacs
+      args:
+        GENIEACS_VERSION: 1.2.16
+    command: ["genieacs-cwmp"]
+    ports:
+      - "${GENIEACS_CWMP_BIND_ADDRESS:-127.0.0.1}:${GENIEACS_CWMP_PORT:-7547}:7547"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('node:net').connect(7547,'127.0.0.1',()=>process.exit(0)).on('error',()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  genieacs-nbi:
+    <<: *genieacs-service
+    command: ["genieacs-nbi"]
+    ports:
+      - "127.0.0.1:${GENIEACS_NBI_PORT:-7557}:7557"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('node:net').connect(7557,'127.0.0.1',()=>process.exit(0)).on('error',()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  genieacs-fs:
+    <<: *genieacs-service
+    command: ["genieacs-fs"]
+    ports:
+      - "127.0.0.1:${GENIEACS_FS_PORT:-7567}:7567"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('node:net').connect(7567,'127.0.0.1',()=>process.exit(0)).on('error',()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+  genieacs-ui:
+    <<: *genieacs-service
+    command: ["genieacs-ui"]
+    ports:
+      - "127.0.0.1:${GENIEACS_UI_PORT:-3002}:3000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "require('node:net').connect(3000,'127.0.0.1',()=>process.exit(0)).on('error',()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+
+volumes:
+  postgres_data:
+  redis_data:
+  mongo_data:
+  mongo_config:

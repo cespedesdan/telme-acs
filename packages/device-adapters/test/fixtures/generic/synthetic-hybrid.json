@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "source": "synthetic-test",
+  "capturedAt": "2026-08-10T00:00:00.000Z",
+  "identity": {
+    "serialNumber": "SYNTHETIC-NOT-A-REAL-CPE",
+    "manufacturer": "TEST-ONLY"
+  },
+  "parameters": {
+    "Device.": {},
+    "InternetGatewayDevice.": {}
+  }
+}

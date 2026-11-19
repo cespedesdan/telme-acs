@@ -1,0 +1,33 @@
+{
+  "name": "@telme/persistence",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "generate": "pnpm --dir ../.. db:generate",
+    "build": "pnpm run generate && tsc -p tsconfig.json",
+    "typecheck": "pnpm run generate && tsc -p tsconfig.json --noEmit",
+    "test": "pnpm run build && node --test test/client.test.mjs",
+    "test:integration": "pnpm run build && node --test test/*.integration.test.mjs"
+  },
+  "dependencies": {
+    "@prisma/adapter-pg": "7.9.1",
+    "@prisma/client": "7.9.1",
+    "@telme/device-model": "workspace:*",
+    "pg": "8.16.3"
+  },
+  "devDependencies": {
+    "@telme/auth": "workspace:*"
+  }
+}

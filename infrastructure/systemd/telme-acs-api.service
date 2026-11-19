@@ -1,0 +1,23 @@
+[Unit]
+Description=TELME ACS API
+After=network-online.target docker.service
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=telme-acs
+Group=telme-acs
+WorkingDirectory=/opt/telme-acs/apps/api
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /opt/telme-acs/apps/api/dist/main.js
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

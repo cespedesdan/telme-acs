@@ -1,0 +1,190 @@
+{
+  "schemaVersion": 1,
+  "source": "sanitized-capture",
+  "capturedAt": "2026-08-13T17:04:53.483Z",
+  "identity": {
+    "serialNumber": "SANITIZED-RTF8225VW-REV3-LAB",
+    "manufacturer": "Askey",
+    "model": "RTF8225VW",
+    "productClass": "RTF8225VW",
+    "oui": "009096",
+    "hardwareVersion": "REV3",
+    "softwareVersion": "BR_SG_g1.4_RTF_TEF004_V2.9"
+  },
+  "parameters": {
+    "InternetGatewayDevice.DeviceInfo.Manufacturer": { "_value": "Askey" },
+    "InternetGatewayDevice.DeviceInfo.ManufacturerOUI": { "_value": "009096" },
+    "InternetGatewayDevice.DeviceInfo.ModelName": { "_value": "RTF8225VW" },
+    "InternetGatewayDevice.DeviceInfo.ProductClass": { "_value": "RTF8225VW" },
+    "InternetGatewayDevice.DeviceInfo.SerialNumber": { "_value": "[REDACTED]" },
+    "InternetGatewayDevice.DeviceInfo.HardwareVersion": { "_value": "REV3" },
+    "InternetGatewayDevice.DeviceInfo.SoftwareVersion": {
+      "_value": "BR_SG_g1.4_RTF_TEF004_V2.9"
+    },
+    "InternetGatewayDevice.X_TELEFONICA_COM_Roaming.UniqueSSID": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Standard": {
+      "_value": "acng"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Name": {
+      "_value": "ap0"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN24GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Enable": {
+      "_value": false
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Status": {
+      "_value": "Disabled"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Name": {
+      "_value": "ap2"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Standard": {
+      "_value": "acng"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.2.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN24GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.Enable": {
+      "_value": false
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.Status": {
+      "_value": "Disabled"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.Name": {
+      "_value": "ap4"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.Standard": {
+      "_value": "acng"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.3.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN24GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Enable": {
+      "_value": false
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Status": {
+      "_value": "Disabled"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Name": {
+      "_value": "ap6"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Standard": {
+      "_value": "acng"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN24GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Standard": {
+      "_value": "ax"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Name": {
+      "_value": "ap1"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Channel": {
+      "_value": 36
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.TotalAssociations": {
+      "_value": 2
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN5GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Enable": {
+      "_value": false
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Status": {
+      "_value": "Disabled"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Name": {
+      "_value": "ap3"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Standard": {
+      "_value": "ax"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Channel": {
+      "_value": 36
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN5GHZ"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ConnectionStatus": {
+      "_value": "Connected"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.Username": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_VIVO_COM_BR_ExternalIPv6Address": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    }
+  }
+}

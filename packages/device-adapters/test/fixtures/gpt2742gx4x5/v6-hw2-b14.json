@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "source": "sanitized-capture",
+  "capturedAt": "2026-08-13T17:08:20.573Z",
+  "identity": {
+    "serialNumber": "SANITIZED-GPT2742GX4X5-V6-LAB",
+    "manufacturer": "MitraStar Technology Corp.",
+    "model": "GPT-2742GX4X5v6",
+    "productClass": "GPT-2742GX4X5v6",
+    "oui": "b046fc",
+    "hardwareVersion": "tmp_hardware2.0",
+    "softwareVersion": "GL_g1.10_100XNT0b14"
+  },
+  "parameters": {
+    "InternetGatewayDevice.DeviceInfo.Manufacturer": {
+      "_value": "MitraStar Technology Corp."
+    },
+    "InternetGatewayDevice.DeviceInfo.ManufacturerOUI": { "_value": "b046fc" },
+    "InternetGatewayDevice.DeviceInfo.ModelName": {
+      "_value": "GPT-2742GX4X5v6"
+    },
+    "InternetGatewayDevice.DeviceInfo.ProductClass": {
+      "_value": "GPT-2742GX4X5v6"
+    },
+    "InternetGatewayDevice.DeviceInfo.SerialNumber": { "_value": "[REDACTED]" },
+    "InternetGatewayDevice.DeviceInfo.HardwareVersion": {
+      "_value": "tmp_hardware2.0"
+    },
+    "InternetGatewayDevice.DeviceInfo.SoftwareVersion": {
+      "_value": "GL_g1.10_100XNT0b14"
+    },
+    "InternetGatewayDevice.X_TELEFONICA_COM_Roaming.UniqueSSID": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Name": {
+      "_value": "ra0"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Standard": {
+      "_value": "ax"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.TotalAssociations": {
+      "_value": 2
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN24GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Name": {
+      "_value": "rai0"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Standard": {
+      "_value": "ax"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.Channel": {
+      "_value": 149
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.TotalAssociations": {
+      "_value": 5
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN5GHZ"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Name": {
+      "_value": "rai1"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Standard": {
+      "_value": "ax"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.Channel": {
+      "_value": 149
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.6.X_TELEFONICA-ES_FrecuencyBand": {
+      "_value": "WLAN5GHZ"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.X_VIVO_COM_BR_ExternalIPv6Address": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.5.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    }
+  }
+}

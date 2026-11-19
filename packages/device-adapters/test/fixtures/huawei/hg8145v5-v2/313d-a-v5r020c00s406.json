@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 1,
+  "source": "sanitized-capture",
+  "capturedAt": "2026-10-15T04:18:06.000Z",
+  "identity": {
+    "serialNumber": "SANITIZED-HG8145V5-V2-HW313D-A-FW-S406",
+    "manufacturer": "Huawei Technologies Co., Ltd",
+    "model": "HG8145V5-V2",
+    "productClass": "HG8145V5-V2",
+    "oui": "00259E",
+    "hardwareVersion": "313D.A",
+    "softwareVersion": "V5R020C00S406"
+  },
+  "parameters": {
+    "InternetGatewayDevice.DeviceInfo.HardwareVersion": { "_value": "313D.A" },
+    "InternetGatewayDevice.DeviceInfo.Manufacturer": {
+      "_value": "Huawei Technologies Co., Ltd"
+    },
+    "InternetGatewayDevice.DeviceInfo.ManufacturerOUI": { "_value": "00259E" },
+    "InternetGatewayDevice.DeviceInfo.ModelName": { "_value": "HG8145V5-V2" },
+    "InternetGatewayDevice.DeviceInfo.ProductClass": { "_value": "HG8145V5-V2" },
+    "InternetGatewayDevice.DeviceInfo.SoftwareVersion": {
+      "_value": "V5R020C00S406"
+    },
+    "InternetGatewayDevice.DeviceInfo.SpecVersion": { "_value": "1.0" },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Channel": {
+      "_value": 11
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.RadioEnabled": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Standard": {
+      "_value": "11bgn"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_RFBand": {
+      "_value": "2.4GHz"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_Standard": {
+      "_value": "11bgn"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_SupportedStandards": {
+      "_value": "b,g,n"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Channel": {
+      "_value": 149
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.RadioEnabled": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Standard": {
+      "_value": "11ac"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.TotalAssociations": {
+      "_value": 0
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_RFBand": {
+      "_value": "5GHz"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_Standard": {
+      "_value": "11ac"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_SupportedStandards": {
+      "_value": "a,n,ac"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ConnectionStatus": {
+      "_value": "Connected"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ConnectionType": {
+      "_value": "IP_Routed"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ExternalIPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Name": {
+      "_value": "2_TR069_VOIP_INTERNET_R_VID_1000"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Username": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_IPv6Enable": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_IPv6.IPv6Address.1.IPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_SERVICELIST": {
+      "_value": "TR069_VOIP_INTERNET"
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.RXPower": {
+      "_value": -21
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.TXPower": {
+      "_value": 2
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.TransceiverTemperature": {
+      "_value": 49
+    }
+  }
+}

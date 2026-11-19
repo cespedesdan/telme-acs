@@ -1,0 +1,23 @@
+[Unit]
+Description=TELME ACS Web
+After=network-online.target telme-acs-api.service
+Wants=network-online.target telme-acs-api.service
+
+[Service]
+Type=simple
+User=telme-acs
+Group=telme-acs
+WorkingDirectory=/opt/telme-acs/apps/web
+Environment=NODE_ENV=production
+ExecStart=/usr/bin/node /opt/telme-acs/apps/web/scripts/start.mjs
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

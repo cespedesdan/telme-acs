@@ -1,0 +1,186 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../packages/persistence/src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum UserRole {
+  ADMIN
+  NOC
+  SUPPORT_L2
+  SUPPORT_L1
+  FIELD_TECHNICIAN
+  READ_ONLY
+}
+
+enum CapabilityState {
+  supported
+  unsupported
+  unknown
+  read_only
+  experimental
+}
+
+enum DeviceOnlineState {
+  online
+  stale
+  offline
+  unknown
+}
+
+enum DeviceOperationState {
+  executed
+  queued
+  failed
+  timed_out
+}
+
+enum DeviceBindingMethod {
+  pppoe
+  mac
+  manual
+  import
+}
+
+model User {
+  id              String            @id @default(uuid()) @db.Uuid
+  email           String            @unique @db.VarChar(320)
+  displayName     String            @db.VarChar(120)
+  passwordHash    String            @db.VarChar(255)
+  role            UserRole          @default(READ_ONLY)
+  isActive        Boolean           @default(true)
+  createdAt       DateTime          @default(now()) @db.Timestamptz(3)
+  updatedAt       DateTime          @default(now()) @updatedAt @db.Timestamptz(3)
+  operations      DeviceOperation[] @relation("OperationActor")
+  auditLogs       AuditLog[]        @relation("AuditActor")
+  bindingsCreated DeviceBinding[]   @relation("BindingCreator")
+}
+
+model Device {
+  id              String             @id @default(uuid()) @db.Uuid
+  genieAcsId      String             @unique @db.VarChar(255)
+  serialNumber    String             @db.VarChar(255)
+  manufacturer    String?            @db.VarChar(120)
+  model           String?            @db.VarChar(120)
+  productClass    String?            @db.VarChar(120)
+  oui             String?            @db.VarChar(16)
+  hardwareVersion String?            @db.VarChar(120)
+  softwareVersion String?            @db.VarChar(120)
+  macAddress      String?            @unique @db.VarChar(17)
+  pppoeUsername   String?            @db.VarChar(255)
+  localLabel      String?            @db.VarChar(120)
+  onlineState     DeviceOnlineState  @default(unknown)
+  lastInformAt    DateTime?          @db.Timestamptz(3)
+  createdAt       DateTime           @default(now()) @db.Timestamptz(3)
+  updatedAt       DateTime           @default(now()) @updatedAt @db.Timestamptz(3)
+  capabilities    DeviceCapability[]
+  operations      DeviceOperation[]
+  auditLogs       AuditLog[]
+  bindings        DeviceBinding[]
+
+  @@index([manufacturer, model])
+  @@index([serialNumber])
+  @@index([pppoeUsername])
+  @@index([lastInformAt])
+}
+
+model DeviceCapability {
+  id        String          @id @default(uuid()) @db.Uuid
+  deviceId  String          @db.Uuid
+  name      String          @db.VarChar(80)
+  state     CapabilityState @default(unknown)
+  source    String          @db.VarChar(80)
+  evidence  String?         @db.VarChar(255)
+  createdAt DateTime        @default(now()) @db.Timestamptz(3)
+  updatedAt DateTime        @default(now()) @updatedAt @db.Timestamptz(3)
+  device    Device          @relation(fields: [deviceId], references: [id], onDelete: Cascade)
+
+  @@unique([deviceId, name])
+  @@index([name, state])
+}
+
+model DeviceOperation {
+  id                      String               @id @default(uuid()) @db.Uuid
+  deviceId                String               @db.Uuid
+  actorId                 String?              @db.Uuid
+  type                    String               @db.VarChar(100)
+  state                   DeviceOperationState
+  correlationId           String               @unique @db.VarChar(100)
+  genieAcsTaskId          String?              @unique @db.VarChar(255)
+  safeRequestSummary      Json?
+  requestFingerprint      String?              @db.VarChar(64)
+  verification            Json?
+  verificationTaskId      String?              @db.VarChar(255)
+  verificationRequestedAt DateTime?            @db.Timestamptz(3)
+  expiresAt               DateTime?            @db.Timestamptz(3)
+  errorCode               String?              @db.VarChar(100)
+  createdAt               DateTime             @default(now()) @db.Timestamptz(3)
+  updatedAt               DateTime             @default(now()) @updatedAt @db.Timestamptz(3)
+  completedAt             DateTime?            @db.Timestamptz(3)
+  device                  Device               @relation(fields: [deviceId], references: [id], onDelete: Restrict)
+  actor                   User?                @relation("OperationActor", fields: [actorId], references: [id], onDelete: SetNull)
+  auditLogs               AuditLog[]
+
+  @@index([deviceId, createdAt])
+  @@index([actorId, createdAt])
+  @@index([state, createdAt])
+}
+
+model ExternalIdentifier {
+  id          String          @id @default(uuid()) @db.Uuid
+  system      String          @db.VarChar(80)
+  entityType  String          @db.VarChar(80)
+  value       String          @db.VarChar(255)
+  displayName String?         @db.VarChar(255)
+  createdAt   DateTime        @default(now()) @db.Timestamptz(3)
+  updatedAt   DateTime        @default(now()) @updatedAt @db.Timestamptz(3)
+  bindings    DeviceBinding[]
+  auditLogs   AuditLog[]
+
+  @@unique([system, entityType, value])
+}
+
+model DeviceBinding {
+  id                   String              @id @default(uuid()) @db.Uuid
+  deviceId             String              @db.Uuid
+  externalIdentifierId String              @db.Uuid
+  method               DeviceBindingMethod
+  createdById          String?             @db.Uuid
+  startedAt            DateTime            @default(now()) @db.Timestamptz(3)
+  endedAt              DateTime?           @db.Timestamptz(3)
+  note                 String?             @db.VarChar(500)
+  device               Device              @relation(fields: [deviceId], references: [id], onDelete: Restrict)
+  externalIdentifier   ExternalIdentifier  @relation(fields: [externalIdentifierId], references: [id], onDelete: Restrict)
+  createdBy            User?               @relation("BindingCreator", fields: [createdById], references: [id], onDelete: SetNull)
+
+  @@index([deviceId, endedAt])
+  @@index([externalIdentifierId, endedAt])
+  @@index([createdById, startedAt])
+}
+
+model AuditLog {
+  id                   String              @id @default(uuid()) @db.Uuid
+  actorId              String?             @db.Uuid
+  deviceId             String?             @db.Uuid
+  externalIdentifierId String?             @db.Uuid
+  operationId          String?             @db.Uuid
+  action               String              @db.VarChar(120)
+  beforeSummary        Json?
+  afterSummary         Json?
+  correlationId        String              @db.VarChar(100)
+  result               String              @db.VarChar(40)
+  genieAcsTaskId       String?             @db.VarChar(255)
+  createdAt            DateTime            @default(now()) @db.Timestamptz(3)
+  actor                User?               @relation("AuditActor", fields: [actorId], references: [id], onDelete: SetNull)
+  device               Device?             @relation(fields: [deviceId], references: [id], onDelete: Restrict)
+  externalIdentifier   ExternalIdentifier? @relation(fields: [externalIdentifierId], references: [id], onDelete: Restrict)
+  operation            DeviceOperation?    @relation(fields: [operationId], references: [id], onDelete: Restrict)
+
+  @@index([correlationId])
+  @@index([actorId, createdAt])
+  @@index([deviceId, createdAt])
+  @@index([action, createdAt])
+}

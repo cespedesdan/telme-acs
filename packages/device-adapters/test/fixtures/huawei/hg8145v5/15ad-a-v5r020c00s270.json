@@ -1,0 +1,120 @@
+{
+  "schemaVersion": 1,
+  "source": "sanitized-capture",
+  "capturedAt": "2026-08-12T04:43:03.261Z",
+  "identity": {
+    "serialNumber": "SANITIZED-HG8145V5-HW15AD-A-FW-S270",
+    "manufacturer": "Huawei Technologies Co., Ltd",
+    "model": "HG8145V5",
+    "productClass": "HG8145V5",
+    "oui": "00259E",
+    "hardwareVersion": "15AD.A",
+    "softwareVersion": "V5R020C00S270"
+  },
+  "parameters": {
+    "InternetGatewayDevice.DeviceInfo.HardwareVersion": { "_value": "15AD.A" },
+    "InternetGatewayDevice.DeviceInfo.Manufacturer": {
+      "_value": "Huawei Technologies Co., Ltd"
+    },
+    "InternetGatewayDevice.DeviceInfo.ManufacturerOUI": { "_value": "00259E" },
+    "InternetGatewayDevice.DeviceInfo.ModelName": { "_value": "HG8145V5" },
+    "InternetGatewayDevice.DeviceInfo.ProductClass": { "_value": "HG8145V5" },
+    "InternetGatewayDevice.DeviceInfo.SoftwareVersion": {
+      "_value": "V5R020C00S270"
+    },
+    "InternetGatewayDevice.DeviceInfo.SpecVersion": { "_value": "1.0" },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Channel": {
+      "_value": 9
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.RadioEnabled": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Standard": {
+      "_value": "11bgn"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_RFBand": {
+      "_value": "2.4GHz"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_Standard": {
+      "_value": "11bgn"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.1.X_HW_SupportedStandards": {
+      "_value": "b,g,n"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Channel": {
+      "_value": 36
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.RadioEnabled": {
+      "_value": true
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.SSID": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.PreSharedKey.1.KeyPassphrase": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Standard": {
+      "_value": "11ac"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.Status": {
+      "_value": "Up"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_RFBand": {
+      "_value": "5GHz"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_Standard": {
+      "_value": "11ac"
+    },
+    "InternetGatewayDevice.LANDevice.1.WLANConfiguration.4.X_HW_SupportedStandards": {
+      "_value": "a,n,ac"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ConnectionStatus": {
+      "_value": "Connected"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ConnectionType": {
+      "_value": "IP_Routed"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Enable": {
+      "_value": true
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.ExternalIPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Name": {
+      "_value": "2_TR069_VOIP_INTERNET_R_VID_1000"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.Username": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_IPv6Enable": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_IPv6.IPv6Address.1.IPAddress": {
+      "_value": "[REDACTED]"
+    },
+    "InternetGatewayDevice.WANDevice.1.WANConnectionDevice.2.WANPPPConnection.1.X_HW_SERVICELIST": {
+      "_value": "TR069_VOIP_INTERNET"
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.RXPower": {
+      "_value": -21
+    },
+    "InternetGatewayDevice.WANDevice.1.X_GponInterafceConfig.TXPower": {
+      "_value": 2
+    }
+  }
+}
